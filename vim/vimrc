@@ -32,6 +32,7 @@ call plug#end()
 " Personal defaults
 let mapleader = ","
 set number
+set nowrap
 set swapfile
 set dir=~/tmp
 
