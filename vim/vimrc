@@ -1,4 +1,4 @@
-" VIMRC by eric
+" by eric 2/18/17
 
 " Specify a directory for plugins (for Neovim: ~/.local/share/nvim/plugged)
 call plug#begin('~/.vim/plugged')
@@ -22,11 +22,16 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'tpope/vim-sensible'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'bronson/vim-trailing-whitespace'
-Plug 'xuyuanp/nerdtree-git-plugin'	" Install after NERDTree
+Plug 'xuyuanp/nerdtree-git-plugin'		" Install after NERDTree
 "Plug 'sheerun/vim-polyglot'
 
 " Initialize plugin system
 call plug#end()
+
+
+" Personal defaults
+let mapleader = ","
+set number
 
 
 " NERDTree
@@ -44,6 +49,8 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 " let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
+let g:syntastic_javascript_checkers = ['eslint']
+
 
 
 " Vim Colors Solarized
@@ -54,3 +61,8 @@ colorscheme solarized
 
 " NERDCommenter
 filetype plugin on
+
+
+" Vim Indent Guides
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1

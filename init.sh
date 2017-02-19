@@ -12,21 +12,26 @@ brew install openssl
 
 # Zsh
 brew install zsh zsh-completion
+cp -r $HOME/Projects/dotfiles/zsh $HOME/.zsh
+for file in "$HOME/.zsh/^(README.md|zshrc)"; do
+    ln -s "$file" "$HOME/.${file:t}"
+done
 
 # Prezto
 zsh
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "$HOME/.zprezto"
 setopt EXTENDED_GLOB
-for rcfile in $HOME/.zprezto/runcoms/^README.md(.N); do
+for rcfile in "$HOME/.zprezto/runcoms/^README.md(.N)"; do
     ln -s "$rcfile" "$HOME/.${rcfile:t}"
 done
 chsh -s /bin/zsh
+cat $HOME/.zsh/zshrc >> $HOME/.zshrc
 
 # Git
 brew install git
 cp -r $HOME/Projects/dotfiles/git $HOME/.git
 setopt EXTENDED_GLOB
-for file in $HOME/.git/^README.md; do
+for file in "$HOME/.git/^README.md"; do
     ln -s "$file" "$HOME/.${file:t}"
 done
 
@@ -34,7 +39,7 @@ done
 brew install vim
 cp -r $HOME/Projects/dotfiles/vim $HOME/.vim
 setopt EXTENDED_GLOB
-for file in $HOME/.vim/^README.md; do
+for file in "$HOME/.vim/^README.md"; do
     ln -s "$file" "$HOME/.${file:t}"
 done
 curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs \
@@ -45,7 +50,7 @@ vim +PlugInstall +qall
 # Rvm & Ruby
 curl -sSL https://get.rvm.io | bash -s stable --ruby --with-openssl-dir=`brew --prefix openssl`
 # If previous command doesn't work (note: change ruby version to the installed version)
-# curl -sSL https://get.rvm.io | bash -s stable --ruby 
+# curl -sSL https://get.rvm.io | bash -s stable --ruby
 # rvm reinstall 2.4.0 --with-openssl-dir=`brew --prefix openssl`
 source $HOME/.rvm/scripts/rvm
 rvm requirements

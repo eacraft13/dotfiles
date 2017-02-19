@@ -1,0 +1,5 @@
+
+# Load aliases
+if [ -f $HOME/.zaliases ]; then
+    source $HOME/.zaliases
+fi

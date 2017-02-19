@@ -1,0 +1,9 @@
+# Need to get these run from zshrc
+
+# Main
+alias cl="clear"
+alias rm="nocorrect rm"
+
+# Git
+alias gs="git status"
+alias ga="git add --all"
