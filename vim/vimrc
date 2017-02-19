@@ -32,6 +32,8 @@ call plug#end()
 " Personal defaults
 let mapleader = ","
 set number
+set swapfile
+set dir=~/tmp
 
 
 " NERDTree
