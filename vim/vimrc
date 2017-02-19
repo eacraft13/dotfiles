@@ -1,0 +1,56 @@
+" VIMRC by eric
+
+" Specify a directory for plugins (for Neovim: ~/.local/share/nvim/plugged)
+call plug#begin('~/.vim/plugged')
+
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'
+Plug 'altercation/vim-colors-solarized'
+Plug 'bling/vim-airline'
+Plug 'scrooloose/nerdcommenter'
+Plug 'airblade/vim-gitgutter'
+"Plug 'valloric/youcompleteme'
+"Plug 'pangloss/vim-javascript'
+Plug 'godlygeek/tabular'
+"Plug 'ervandew/supertab'
+"Plug 'tpope/vim-repeat'
+"Plug 'mattn/emmet-vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'raimondi/delimitmate'
+Plug 'nathanaelkane/vim-indent-guides'
+"Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-sensible'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'bronson/vim-trailing-whitespace'
+Plug 'xuyuanp/nerdtree-git-plugin'	" Install after NERDTree
+"Plug 'sheerun/vim-polyglot'
+
+" Initialize plugin system
+call plug#end()
+
+
+" NERDTree
+map <C-n> :NERDTreeToggle<CR>
+
+
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
+
+
+" Vim Colors Solarized
+syntax enable
+set background=dark
+colorscheme solarized
+
+
+" NERDCommenter
+filetype plugin on

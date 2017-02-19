@@ -1,0 +1,12 @@
+[alias]
+    ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+    ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+[core]
+    editor = vim
+    excludesfile = $HOME/.gitignore
+    fileMode = false
+[color]
+    ui = true
+[user]
+    email = eacraft13@gmail.com
+    name = eric
