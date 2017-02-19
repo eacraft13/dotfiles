@@ -5,6 +5,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
+Plug 'tpope/vim-surround'
 Plug 'altercation/vim-colors-solarized'
 Plug 'bling/vim-airline'
 Plug 'scrooloose/nerdcommenter'
@@ -34,7 +35,7 @@ let mapleader = ","
 set number
 set nowrap
 set swapfile
-set dir=~/tmp
+set directory=~/.vim/tmp//
 
 
 " NERDTree

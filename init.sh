@@ -38,6 +38,7 @@ done
 # Vim
 brew install vim
 cp -r $HOME/Projects/dotfiles/vim $HOME/.vim
+mkdir $HOME/.vim/tmp
 setopt EXTENDED_GLOB
 for file in "$HOME/.vim/^README.md"; do
     ln -s "$file" "$HOME/.${file:t}"
