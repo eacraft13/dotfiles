@@ -48,6 +48,13 @@ curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs \
 vim +PlugInstall +qall
 # TODO: fix solarized install (it fails on very first attempt)
 
+# Lint
+cp -r $HOME/Projects/dotfiles/lint $HOME/.lint
+setopt EXTENDED_GLOB
+for file in "$HOME/.lint/^README.md"; do
+    ln -s "$file" "$HOME/.${file:t}"
+done
+
 # Rvm & Ruby
 curl -sSL https://get.rvm.io | bash -s stable --ruby --with-openssl-dir=`brew --prefix openssl`
 # If previous command doesn't work (note: change ruby version to the installed version)
