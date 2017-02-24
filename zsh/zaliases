@@ -4,6 +4,12 @@
 alias cl="clear"
 alias rm="nocorrect rm"
 
+# Movement
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+
 # Git
 alias gs="git status"
 alias ga="git add --all"
